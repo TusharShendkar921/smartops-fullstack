@@ -1,4 +1,7 @@
 package com.smartops.backend.repository;
 
-public class ProjectRepository {
+import com.smartops.backend.entity.Project;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProjectRepository extends JpaRepository<Project, Long> {
 }

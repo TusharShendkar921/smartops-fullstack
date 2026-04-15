@@ -1,4 +1,7 @@
 package com.smartops.backend.entity;
 
-public class TaskStatus {
+public enum TaskStatus {
+    TODO,
+    IN_PROGRESS,
+    DONE
 }

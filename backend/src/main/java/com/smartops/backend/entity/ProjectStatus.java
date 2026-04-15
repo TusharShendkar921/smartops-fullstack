@@ -1,4 +1,7 @@
 package com.smartops.backend.entity;
 
-public class ProjectStatus {
+public enum ProjectStatus {
+    PLANNED,
+    IN_PROGRESS,
+    COMPLETED
 }

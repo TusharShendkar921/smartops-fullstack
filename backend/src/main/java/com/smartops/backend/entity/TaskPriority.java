@@ -1,4 +1,7 @@
 package com.smartops.backend.entity;
 
-public class TaskPriority {
+public enum TaskPriority {
+    LOW,
+    MEDIUM,
+    HIGH
 }
