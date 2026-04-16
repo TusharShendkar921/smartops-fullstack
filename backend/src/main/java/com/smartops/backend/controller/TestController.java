@@ -2,24 +2,14 @@ package com.smartops.backend.controller;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api/test")
 public class TestController {
 
-    // PUBLIC (no auth needed)
-    @GetMapping("/")
-    public String home() {
-        return "SmartOps backend is running successfully";
-    }
-
-    @GetMapping("/health")
-    public String health() {
-        return "OK";
-    }
-
-    // SECURED (requires login)
-    @GetMapping("/api/test/hello")
+    @GetMapping("/hello")
     public String hello(Authentication authentication) {
         return "Hello, " + authentication.getName();
     }
