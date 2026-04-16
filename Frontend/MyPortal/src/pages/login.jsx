@@ -13,7 +13,6 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // handle input change
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -21,7 +20,6 @@ function Login() {
     });
   };
 
-  // handle login
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -30,10 +28,8 @@ function Login() {
     try {
       const res = await api.post("/auth/login", form);
 
-      // save token
       localStorage.setItem("token", res.data.token);
        localStorage.setItem("user", JSON.stringify(res.data));
-      // redirect to dashboard
       navigate("/");
     } catch (err) {
       setError("Invalid email or password");
