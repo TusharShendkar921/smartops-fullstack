@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://smartops-fullstack-5.onrender.com/api",
+  baseURL: `${process.env.REACT_APP_API_URL}/api`,
 });
 
 api.interceptors.request.use((config) => {
@@ -22,7 +22,7 @@ api.interceptors.response.use(
       console.log("Unauthorized - please login again");
     }
     return Promise.reject(error);
-  }
+  },
 );
 
 export default api;
